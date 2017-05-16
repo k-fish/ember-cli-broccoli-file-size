@@ -1,18 +1,30 @@
 # ember-cli-broccoli-file-size
 
-This README outlines the details of collaborating on this Ember addon.
+**This addon is currently a WIP. Use at your own discretion**
+
+Ever curious as to what files contribute the most to your ember apps final dist size?
+
+This addon uses the broccoli plugin [broccoli-file-size](https://www.npmjs.com/package/broccoli-file-size) to output file sizes for all the assets in your broccoli tree.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-cli-broccoli-file-size`
-* `npm install`
-* `bower install`
+* `ember install ember-cli-broccoli-file-size`
 
 ## Running
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+This will output asset sizes on your `ember build` step so long as it is enabled via the config.
+
+#### Configuration 
+
+```js
+'ember-cli-broccoli-file-size': {
+  enabled: true, // the addon is disabled by default unless this option is set
+  broccoliFileSizeOptions: { // Options to be passed to the broccoli file size plugin. Can be found https://www.npmjs.com/package/broccoli-file-size#options
+    colors: true, // true by default
+    gzipped: true // shows gzipped sizes, true by default
+  }
+}
+```
 
 ## Running Tests
 
