@@ -17,13 +17,17 @@ This will output asset sizes on your `ember build` step so long as it is enabled
 #### Configuration 
 
 ```js
-'ember-cli-broccoli-file-size': {
-  enabled: true, // the addon is disabled by default unless this option is set
-  broccoliFileSizeOptions: { // Options to be passed to the broccoli file size plugin. Can be found https://www.npmjs.com/package/broccoli-file-size#options
-    colors: true, // true by default
-    gzipped: true // shows gzipped sizes, true by default
-  }
-}
+// ember-cli-build.js
+var app = new EmberApp(defaults, { 
+ ...
+  'ember-cli-broccoli-file-size': {
+    enabled: true, // the addon is disabled by default unless this option is set
+    broccoliFileSizeOptions: { // Options to be passed to the broccoli file size plugin. Can be found https://www.npmjs.com/package/broccoli-file-size#options
+      colors: true, // true by default
+      gzipped: true // shows gzipped sizes, true by default
+    }
+  },
+  ...
 ```
 
 ## Running Tests
